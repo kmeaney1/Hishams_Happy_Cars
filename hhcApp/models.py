@@ -21,22 +21,24 @@ class Car(models.Model):
     avg_mpg = models.IntegerField(blank=True, null=True)
     city_mpg = models.IntegerField(blank=True, null=True)
     hwy_mpg = models.IntegerField(blank=True, null=True)
+    seller_id = models.IntegerField(blank=False, null=False)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'car'
+        unique_together = (('vin', 'seller_id'),)
 
 
-class Customer(models.Model):
-    customer_id = models.IntegerField(primary_key=True)
+class User(models.Model):
+    user_id = models.IntegerField(primary_key=True)
     password = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
     phone_number = models.IntegerField()
     email_addr = models.CharField(max_length=50)
 
     class Meta:
-        managed = False
-        db_table = 'customer'
+        managed = True
+        db_table = 'user'
 
 
 class Recalls(models.Model):
@@ -48,7 +50,7 @@ class Recalls(models.Model):
     is_fixed = models.IntegerField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'recalls'
         unique_together = (('car_make', 'car_model', 'car_year', 'date'),)
 
@@ -60,29 +62,17 @@ class Sales(models.Model):
     date = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'sales'
         unique_together = (('seller_id', 'car_vin', 'customer_id'),)
 
 
-class Seller(models.Model):
-    seller_id = models.IntegerField(primary_key=True)
-    password = models.CharField(max_length=50)
-    name = models.CharField(max_length=50)
-    phone_number = models.IntegerField()
-    email_addr = models.CharField(max_length=50)
-
-    class Meta:
-        managed = False
-        db_table = 'seller'
-
-
 class WishList(models.Model):
-    customer_id = models.IntegerField(primary_key=True)
+    user_id = models.IntegerField(primary_key=True)
     car_vin = models.IntegerField(db_column='car_VIN')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'wish_list'
-        unique_together = (('customer_id', 'car_vin'),)
+        unique_together = (('user_id', 'car_vin'),)
 
