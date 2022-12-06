@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.index),
     path('form', views.add_car_form, name='form'),
     path('carProf', views.get_car_info, name='carProf'),
+    path('signup', views.sign_up, name='signup'),
     path('carProf/<int:car_vin>/', views.get_car_info, name='profile')
 ]

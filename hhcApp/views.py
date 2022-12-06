@@ -5,6 +5,7 @@ from django.template import loader
 from django.http import HttpResponse
 from .models import Car
 from .forms import addCarForm
+from .forms import signupForm
 
 
 def index(request):
@@ -28,3 +29,12 @@ def get_car_info(request, car_vin):
         'mymembers': mydata,
     }
     return HttpResponse(template.render(context, request))
+
+def sign_up(request):
+    if request.method == "POST":
+        form = signupForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = signupForm()
+    return render(request, "signUp-Form.html", {'signup': form})
