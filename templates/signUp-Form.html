@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Sign Up Form</title>
 </head>
-<p>Hello there</p>
+<body>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</body>
 </html>
