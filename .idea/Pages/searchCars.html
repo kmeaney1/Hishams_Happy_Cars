@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search for Cars</title>
+</head>
+<body>
+<h1>Search for Cars</h1>
+
+<form action="searchResults.html">
+    <label for="make">Make:</label>
+    <select name="makes" id="make">
+        <option>Acura</option>
+        <option>Audi</option>
+        <option>BMW</option>
+        <option>Buick</option>
+        <option>Cadillac</option>
+        <option>Chevrolet</option>
+        <option>Chrysler</option>
+        <option>Dodge</option>
+        <option>Ford</option>
+        <option>GMC</option>
+        <option>Honda</option>
+        <option>Hyundai</option>
+        <option>INFINITI</option>
+        <option>Jaguar</option>
+        <option>Jeep</option>
+        <option>Kia</option>
+        <option>Land Rover</option>
+        <option>Lexus</option>
+        <option>Lincoln</option>
+        <option>Mazda</option>
+        <option>Mercedes-Benz</option>
+        <option>Mitsubishi</option>
+        <option>Nissan</option>
+        <option>Porsche</option>
+        <option>RAM</option>
+        <option>Subaru</option>
+        <option>Tesla</option>
+        <option>Toyota</option>
+        <option>Volkswagen</option>
+        <option>Volvo</option>
+        <option>Other</option>
+    </select><br><br>
+
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="Model"><br><br>
+
+    Year:<br>
+    <label for="yearMin">Minimum:</label>
+    <input type="number" id="yearMin" name="Year">
+    <label for="yearMax">Maximum:</label>
+    <input type="number" id="yearMax" name="Year"><br><br>
+
+    Price:<br>
+    <label for="priceMin">Minimum:</label>
+    <input type="number" id="priceMin" name="Price">
+    <label for="priceMax">Maximum:</label>
+    <input type="number" id="priceMax" name="Price"><br><br>
+
+    <label for="transmission">Transmission:</label>
+    <select id="transmission">
+        <option>Automatic</option>
+        <option>Manual</option>
+        <option>CVT</option>
+        <option>Other</option>
+    </select><br><br>
+
+    <label for="bodyStyle">Vehicle Body Style:</label>
+    <select id="bodyStyle">
+        <option>Sedan</option>
+        <option>Compact</option>
+        <option>SUV</option>
+        <option>Truck</option>
+        <option>Minivan</option>
+        <option>Convertible</option>
+        <option>Coupe</option>
+        <option>Hatchback</option>
+        <option>Other</option>
+    </select><br><br>
+
+    <label for="numDoors">Number of Doors:</label>
+    <input type="number" id="numDoors" name="Number of Doors"><br><br>
+
+    <label for="drivetrain">Drivetrain (if other, enter it into the box manually):</label>
+    <input type="text" id="drivetrain" list="drivetrainList"><br><br>
+    <datalist id="drivetrainList">
+        <option>AWD</option>
+        <option>4WD</option>
+        <option>FWD</option>
+        <option>RWD</option>
+    </datalist>
+
+    Fuel Economy:<br>
+    <label for="cityMPG">City MPG:</label>
+    <input type="number" id="cityMPG" name="City MPG">
+    <label for="hwyMPG">Highway MPG:</label>
+    <input type="number" id="hwyMPG" name="Highway MPG">
+    <label for="avgMPG">Average MPG:</label>
+    <input type="number" id="avgMPG" name="Average MPG"><br><br>
+
+    <input type="submit" value="Search">
+</form>
+</body>
+</html>
+<!--
+        <label for=""> (if other, enter it into the box manually):</label>
+        <input type="text" id="" list=""><br><br>
+        <datalist id="">
+            <option></option>
+        </datalist>
+        -->
+<!--
+<label for=""></label>
+<input type="" id="" name=""><br><br>
+-->
