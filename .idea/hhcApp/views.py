@@ -9,7 +9,6 @@ from django.db import connection
 from .models import Car, Sales, WishList
 from .forms import addCarForm, SearchForm, purchaseform, wishListForm
 
-
 def index(request):
     return render(request, "index.html")
 

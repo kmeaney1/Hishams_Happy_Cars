@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Sign Up</title>
+</head>
+<body>
+    <h1>Enter your information below to sign up for a Customer Account!</h1>
+    <form>
+        <!--TODO: add "action" attribute to form tag with link that accepts submission of data-->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="Username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="Password" required><br><br>
+
+        <label for="confPass">Confirm Password:</label>
+        <input type="password" id="confPass" name="Confirm Password" required><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="Phone Number" pattern="[0-9]{10}" required><br><br>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+<!--
+        <label for=""> (if other, enter it into the box manually):</label>
+        <input type="text" id="" list=""><br><br>
+        <datalist id="">
+            <option></option>
+        </datalist>
+        -->
+<!--
+<label for=""></label>
+<input type="" id="" name=""><br><br>
+-->

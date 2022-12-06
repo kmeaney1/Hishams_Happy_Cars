@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Listing</title>
+</head>
+<body>
+    <h1>Enter your car's information:</h1>
+    <form name="addCarForm" action="../addCarAction.py" method="get">
+        <!--TODO: add "action" attribute to form tag with link that accepts submission of data-->
+        
+        <label for="VIN">VIN:</label>
+        <input type="number" id="VIN" name="VIN"><br><br>
+
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="Make"><br><br>
+
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="Model"><br><br>
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="Year"><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="Price"><br><br>
+
+        <label for="transmission">Transmission (if other, enter it into the box manually):</label>
+        <input type="text" id="transmission" name="Transmission" list="transmissionList"><br><br>
+        <datalist id="transmissionList">
+            <option>Automatic</option>
+            <option>Manual</option>
+            <option>CVT</option>
+        </datalist>
+
+        <label for="bodyStyle">Vehicle Body Style (if other, enter it into the box manually):</label>
+        <input type="text" id="bodyStyle" name="Body Style" list="bodyStyleList"><br><br>
+        <datalist id="bodyStyleList">
+            <option>Sedan</option>
+            <option>Compact</option>
+            <option>SUV</option>
+            <option>Truck</option>
+            <option>Minivan</option>
+            <option>Convertible</option>
+            <option>Coupe</option>
+            <option>Hatchback</option>
+        </datalist>
+
+        <label for="numDoors">Number of Doors:</label>
+        <input type="number" id="numDoors" name="Number of Doors"><br><br>
+
+        <label for="drivetrain">Drivetrain (if other, enter it into the box manually):</label>
+        <input type="text" id="drivetrain" name="Drivetrain" list="drivetrainList"><br><br>
+        <datalist id="drivetrainList">
+            <option>AWD</option>
+            <option>4WD</option>
+            <option>FWD</option>
+            <option>RWD</option>
+        </datalist>
+
+        Dimensions:<br>
+        <label for="height">Height: </label>
+        <input type="number" id="height" name="Height">
+        <label for="length">Length:</label>
+        <input type="number" id="length" name="Length">
+        <label for="width">Width:</label>
+        <input type="number" id="width" name="Width"><br><br>
+
+        <label for="engineSpecs">Engine Specifications:</label>
+        <input type="text" id="engineSpecs" name="Engine Specs"><br><br>
+
+        <label for="maxHP">Maximum Horsepower:</label>
+        <input type="number" id="maxHP" name="Max HP"><br><br>
+
+        Fuel Economy:<br>
+        <label for="cityMPG">City MPG:</label>
+        <input type="number" id="cityMPG" name="City MPG">
+        <label for="hwyMPG">Highway MPG:</label>
+        <input type="number" id="hwyMPG" name="Highway MPG">
+        <label for="avgMPG">Average MPG:</label>
+        <input type="number" id="avgMPG" name="Average MPG"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

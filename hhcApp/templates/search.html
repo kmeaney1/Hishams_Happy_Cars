@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+    <h1>Enter your car's information:</h1>
+
+    <form method="post">
+        {{ form }}
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+
+    <h2>Search Result: {{ cars|length }} cars</h2>
+    {% for car in cars %}
+    <div>
+        <h4>{{ car.vin }}</h4>
+        <ul style="color: #333;">
+            <li>Make: {{ car.make }}</li>
+            <li>Model: {{ car.model }}</li>
+            <li>Price: {{ car.price }}</li>
+        </ul>
+    </div>
+    {% endfor %}
+</body>
+</html>
