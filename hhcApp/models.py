@@ -27,6 +27,9 @@ class Car(models.Model):
         managed = True
         db_table = 'car'
         unique_together = (('vin', 'seller_id'),)
+        indexes = [
+            models.Index(fields=['make', 'model', 'year'])
+        ]
 
 
 class User(models.Model):
