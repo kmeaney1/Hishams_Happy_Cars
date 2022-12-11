@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.db import connection
 
 from .models import Car, Sales, WishList, User
-from .forms import addCarForm, SearchForm, purchaseform, wishListForm, signupForm, signinForm
+from .forms import addCarForm, SearchForm, purchaseform, wishListForm, signupForm, signupForm2
 
 
 def index(request):
@@ -106,11 +106,11 @@ def signUp(request):
         form = signupForm()
     return render(request, "signUp-Form.html", {'form': form})
 
-def signIn(request):
+def signUp2(request):
     if request.method == "POST":
-        form = signinForm(request.POST)
+        form = signupForm2(request.POST)
         if form.is_valid():
             form.save()
     else:
-        form = signinForm()
-    return render(request, "signIn-Form.html", {'form': form})
+        form = signupForm2()
+    return render(request, "signUp-Form2.html", {'form': form})
