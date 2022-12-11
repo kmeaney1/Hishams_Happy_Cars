@@ -13,6 +13,9 @@ from .forms import addCarForm, SearchForm, purchaseform, wishListForm, signupFor
 def index(request):
     return render(request, "index.html")
 
+def sign_in_page(request):
+    return render(request, "signInPage.html")
+
 
 def add_car_form(request):
     if request.method == "POST":
@@ -97,6 +100,7 @@ def signUp(request):
     if request.method == "POST":
         form = signupForm(request.POST)
         if form.is_valid():
+
             form.save()
     else:
         form = signupForm()
