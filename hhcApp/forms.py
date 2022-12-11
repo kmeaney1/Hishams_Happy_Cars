@@ -23,6 +23,12 @@ class signupForm(forms.ModelForm):
         fields = ["user_id", "password", "name", "phone_number", "email_addr"]
         labels = {'user_id': "User ID", 'password': "Password", 'name': "Name", 'phone_number': "Phone Number", 'email_addr': "Email Address"}
 
+class signinForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ["user_id", "password", "name", "phone_number", "email_addr"]
+        labels = {'user_id': "User ID", 'password': "Password", 'name': "Name", 'phone_number': "Phone Number", 'email_addr': "Email Address"}
+
 class SearchForm(forms.Form):
     vin = forms.IntegerField(label="VIN", required=False)
     make = forms.CharField(required=False)

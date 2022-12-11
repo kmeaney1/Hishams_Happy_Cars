@@ -27,5 +27,6 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('purchase/', views.purchase, name='purchase'),
     path('wishlist/', views.wishlist, name='wishlist'),
-    path('signup', views.signUp, name='signup')
+    path('signup', views.signUp, name='signup'),
+    path('signin', views.signIn, name='signin')
 ]
