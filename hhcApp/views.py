@@ -6,12 +6,15 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.db import connection
 
-from .models import Car, Sales, WishList
-from .forms import addCarForm, SearchForm, purchaseform, wishListForm
+from .models import Car, Sales, WishList, User
+from .forms import addCarForm, SearchForm, purchaseform, wishListForm, signupForm, signupForm2
 
 
 def index(request):
     return render(request, "index.html")
+
+def sign_in_page(request):
+    return render(request, "signInPage.html")
 
 
 def add_car_form(request):
@@ -92,3 +95,22 @@ def wishlist(request):
         form = wishListForm()
 
     return render(request, "wishlist-form.html", {'form': form})
+
+def signUp(request):
+    if request.method == "POST":
+        form = signupForm(request.POST)
+        if form.is_valid():
+
+            form.save()
+    else:
+        form = signupForm()
+    return render(request, "signUp-Form.html", {'form': form})
+
+def signUp2(request):
+    if request.method == "POST":
+        form = signupForm2(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = signupForm2()
+    return render(request, "signUp-Form2.html", {'form': form})

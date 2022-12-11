@@ -1,6 +1,7 @@
 from django import forms
 
 from .models import Car
+from .models import User
 
 
 class addCarForm(forms.ModelForm):
@@ -16,6 +17,17 @@ class addCarForm(forms.ModelForm):
                   'engine_specs': "Engine Specifications", 'max_horsepower': "Max Horsepower",
                   'avg_mpg': "Average MPG", 'city_mpg': "City MPG", 'hwy_mpg': "Highway MPG",
                   'seller_id': "Your User ID"}
+class signupForm2(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ["user_id", "password"]
+        labels = {'user_id': "User ID", 'password': "Password"}
+
+class signupForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ["user_id", "password", "name", "phone_number", "email_addr"]
+        labels = {'user_id': "User ID", 'password': "Password", 'name': "Name", 'phone_number': "Phone Number", 'email_addr': "Email Address"}
 
 class SearchForm(forms.Form):
     vin = forms.IntegerField(label="VIN", required=False)
@@ -34,5 +46,5 @@ class purchaseform(forms.Form):
 class wishListForm(forms.Form):
     user_id = forms.IntegerField(label="user_id", required=True)
     car_VIN = forms.IntegerField(label="car_VIN", required=True)
-   
+
 
