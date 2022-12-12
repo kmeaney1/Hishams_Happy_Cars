@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.db import connection
 
 from .models import Car, Sales, WishList, User
-from .forms import addCarForm, SearchForm, purchaseform, wishListForm, signupForm, signupForm2
+from .forms import addCarForm, SearchForm, purchaseform, wishListForm, signupForm, signupForm2, registerForm
 
 
 def index(request):
@@ -114,3 +114,20 @@ def signUp2(request):
     else:
         form = signupForm2()
     return render(request, "signUp-Form2.html", {'form': form})
+
+def register(request):
+    if request.method == "POST":
+        form = registerForm(request.POST)
+        if form.is_valid():
+            info = User.objects
+
+            if form.cleaned_data['user_id']:
+                info = info.filter(user_id=form.cleaned_data['user_id'])
+            if form.cleaned_data['password']:
+                info = info.filter(password=form.cleaned_data['user_id'])
+
+            info = info.all()
+            return render(request, "register-Form.html", {'form': form, 'info': info})
+    else:
+        form = registerForm()
+    return render(request, "register-Form.html", {'form': form})

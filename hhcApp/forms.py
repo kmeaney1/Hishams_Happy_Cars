@@ -47,4 +47,6 @@ class wishListForm(forms.Form):
     user_id = forms.IntegerField(label="user_id", required=True)
     car_VIN = forms.IntegerField(label="car_VIN", required=True)
 
-
+class registerForm(forms.Form):
+    user_id = forms.IntegerField(label="user_id", required=False)
+    password = forms.CharField(label="password", required=False)

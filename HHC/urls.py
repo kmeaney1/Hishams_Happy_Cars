@@ -28,5 +28,6 @@ urlpatterns = [
     path('purchase/', views.purchase, name='purchase'),
     path('wishlist/', views.wishlist, name='wishlist'),
     path('signup', views.signUp, name='signup'),
+    path('register', views.register, name='register')
 
 ]
