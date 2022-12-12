@@ -5,10 +5,14 @@
     <title>Sign Up Form</title>
 </head>
 <body>
+<h1>Register for the service</h1>
+<p>Once you sign up check if your registered by clicking the button below</p>
+<a href="register"> registered?</a>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
 </body>
 </html>

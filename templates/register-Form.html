@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+    <h1>Are you registered?</h1>
+    <p>If you are not registered, please proceed to the signup page</p>
+    <a href="signup"> sign up</a>
+    <p>Checking without entering fields will list all registered accounts</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <p><input type="submit" value="Check"></p>
+    </form>
+    {% for user in info %}
+        <p> User ID:  {{ user.user_id }} </p>
+        <p> Password:  {{ user.password }} </p>
+        <h4>------</h4>
+    {% endfor %}
+
+</body>
+</html>
